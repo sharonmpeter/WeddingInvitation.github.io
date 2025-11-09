@@ -403,15 +403,32 @@ body:not(.user-is-tabbing) a:focus {
 /* ----- Header ----- */
 /* --------------------------------------- */
 
-.header {
+/* .header {
     background: linear-gradient(rgba(0,0,0, .1), rgba(0,0,0, .4)), 
         url('./images/header.jpg');
     height: 100vh;
-    background-size: cover;
+    background-size: cover; 
     background-position: center;
     background-attachment: fixed;
     font-size: var(--font-size-normal);
-}
+} */
+.header {
+    position: relative;
+    height: auto;
+    aspect-ratio: 16 / 9; /* adjust as needed, e.g., 3/2 or 4/3 */
+    font-size: var(--font-size-normal);
+    overflow: hidden;
+  }
+  
+  .header::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(rgba(0,0,0, .1), rgba(0,0,0, .4)),
+                url('./images/header.jpg') center / cover no-repeat;
+    z-index: -1;
+  }
+  
 
 .header__text {
     position: absolute;
