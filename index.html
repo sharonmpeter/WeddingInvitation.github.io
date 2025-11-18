@@ -1,129 +1,408 @@
-<!-- 
-  Hello 😊.
-
-  This template is designed and developed by Nisar Hassan Naqvi
-  for anyone to use for free or customize the way they like.
-
-  Github Repo: https://github.com/nisarhassan12/portfolio-template/
-  My Website: https://nisar.dev
-
-  For business & inquires, contact me => syednisarhassan12@gmail.com
--->
-
-<!--
-  Follow the instructions written in comments to create your stunning portfolio
--->
-
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="shortcut icon" type="image/png" href="./images/logo.jpg" />
+    <meta charset="UTF-8">
 
-  <!-- Put your site title here -->
-  <title>
-    Wedding bells.
-  </title>
+    <!-- FIXED: viewport for real responsiveness -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <meta name="description" content="Add small description of yourslef.">
-  <!-- Add some coding keywords below, Ex: (React, CSS etc) -->
-  <meta name="keywords" content="Put your name, skills and some coding keywords" />
-  <link rel="stylesheet" href="index.css" />
+    <meta property="og:title" content="Akhil & Jasmine's Wedding Invitation">
+    <meta property="og:description" content="Join us to celebrate our wedding!">
+    <meta property="og:image" content="img_1.png">
+    <meta property="og:url" content="https://example.com">
+    <meta property="og:type" content="website">
+
+    <link rel="icon" href="img2.jpg" type="image/png">
+
+    <title>Akhil & Jasmine's Wedding Invitation</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap" rel="stylesheet">
+
+<style>
+    body {
+        background-color: #63825b;
+        margin: 0;
+        padding: 0;
+        overflow-x: hidden;
+        font-family: 'Jost';
+    font-style: normal;
+    font-weight: 400;
+    src: url('./fonts/Jost-Regular.ttf') format('woff');
+    }
+
+    /* ---------- INTRO SECTION ---------- */
+    .intro {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        color: white;
+        font-size: 70px;
+        line-height: 1;
+        padding-top: 30px;
+        text-align: center;
+    }
+
+    .intro p {
+        margin: 0;
+        padding: 0;
+        font-weight: 900;
+    }
+
+    .date {
+        padding-top: 30px;
+        font-size: 30px;
+    }
+
+    .intro img {
+        margin-top: 200px;
+        width: 100%;
+        max-height: 400px;
+        object-fit: contain;
+    }
+
+    .intro-mid {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    /* ---------- WELCOME CARD ---------- */
+    .welcome {
+        font-family: "Dancing Script";
+        color: #2A2A3C;
+        font-size: 22px;
+        background: white;
+        width: 60%;
+        max-width: 500px;
+        border-radius: 10px;
+        padding: 20px 25px;
+        margin-top: 20px;
+        text-align: center;
+        box-shadow: 5px 10px 10px rgba(0,0,0,0.4);
+    }
+
+    /* ---------- COUNTDOWN ---------- */
+    .x {
+        font-size: 40px;
+        margin-top: 20px;
+        background: linear-gradient(90deg, #FFD700, #E6B800, #B68B00);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+
+    .countdown {
+        display: flex;
+        margin-top: -10px;
+        color: white;
+    }
+
+    .countdown-item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .countdown-number {
+        font-size: 65px;
+    }
+
+    /* ---------- IMAGE SECTION ---------- */
+    .mid img {
+        width: 70%;
+        max-width: 400px;
+        border-radius: 20px 20px 0 0;
+        margin-top: 40px;
+        box-shadow: 0 4px 8px rgba(0,0,0,1);
+    }
+
+    /* ---------- EVENT SECTION ---------- */
+    .main-2 {
+        background: white;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding-top: 40px;
+    }
+
+    .event {
+        width: 50%;
+        max-width: 450px;
+        color: #2A2A3C;
+        padding: 30px;
+        border-radius: 0 0 20px 20px;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        font-size: 24px;
+    }
+
+    /* ---------- MAP SECTION ---------- */
+    .map {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        justify-content: center;
+        padding: 20px;
+    }
+
+    .map-item {
+        width: 300px;
+        text-align: center;
+    }
+
+    .map-item iframe {
+        width: 100%;
+        height: 200px;
+        border-radius: 10px;
+        border: none;
+        box-shadow: 5px 10px 8px rgba(0,0,0,0.2);
+    }
+    .img4-slideshow {
+    position: relative;
+    width: 100%;
+    height: 1000px; /* adjust */
+    margin: auto;
+    overflow: hidden;
+}
+    /* ---------- slide show ---------- */
+
+    .img4-slideshow img {
+    width: 100%;
+    height: auto;           /* <-- KEY: natural height */
+    position: absolute;
+    left: 0;
+    top: 20;
+    opacity: 0;
+    animation: fadeAnimation 12s infinite;
+    transition: opacity 1s ease-in-out;
+}
+
+.img4-slideshow img:nth-child(1) {
+    animation-delay: 0s;
+}
+
+.img4-slideshow img:nth-child(2) {
+    animation-delay: 4s;
+}
+
+.img4-slideshow img:nth-child(3) {
+    animation-delay: 8s;
+}
+.img4-slideshow img:nth-child(4) {
+    animation-delay: 10s;
+}
+
+.img4-slideshow img:nth-child(5) {
+    animation-delay: 13s;
+}
+
+.img4-slideshow img:nth-child(6) {
+    animation-delay: 16s;
+}
+
+.img4-slideshow img:nth-child(7) {
+    animation-delay: 19s;
+}
+
+
+@keyframes fadeAnimation {
+    0% { opacity: 0; }
+    10% { opacity: 1; }
+    30% { opacity: 1; }
+    40% { opacity: 0; }
+    100% { opacity: 0; }
+}
+
+    /* ---------- MOBILE VIEW ONLY ---------- */
+    @media screen and (max-width: 768px) {
+
+        body { font-family: 'Poppins', sans-serif;
+    }
+
+        .intro {
+            font-size: 10vw;
+        }
+
+        .intro p {
+            font-size: 12vw;
+        }
+
+        .date {
+            font-size: 8vw;
+        }
+
+        .intro img {
+            width: 90%;
+            height: auto;
+            margin-top: 20px;
+        }
+
+        .welcome {
+            width: 75%;
+            font-size: 20px;
+        }
+
+        .countdown-number {
+            font-size: 15vw;
+        }
+
+        .mid img {
+            width: 75%;
+            height: auto;
+        }
+
+        .event {
+            width: 70%;
+            font-size: 5vw;
+        }
+
+        .map-item {
+            width: 95%;
+        }
+    }
+</style>
 </head>
 
 <body>
+    <div class="main-1">
+        <div class="intro">
+            <p>Akhil Karamullil</p>
+            <p>&</p>
+            <p>Jasmine George</p>
 
-  <!-- ***** Header ***** -->
+            <div class="date">10.01.2026</div>
 
-  <header class="header" role="banner" id="top">
-    <div class="row">
-      <nav class="nav" role="navigation">
-        <ul class="nav__items">
-          <li class="nav__item">
-            <a href="#about" class="nav__link">More Info</a>
-          </li>
-          <li class="nav__item">
-            <a href="#contact" class="nav__link">Gallery</a>
-          </li>
-        </ul>
-      </nav>
+            <img src="img3.png">
+
+            scroll down
+            <svg fill="#d4d4d4" width="12vw" height="15vw" viewBox="0 0 30 30">
+                <path d="M29.9 10.1L15.3 24.7 0.7 10.1c-.9-.9-.9-2.5 0-3.5.9-.9 2.5-.9 3.5 0L15.3 18l11.1-11.4c.9-.9 2.5-.9 3.5 0 .9.9.9 2.6-.0 3.5z"/>
+            </svg>
+        </div>
+
+        <div class="intro-mid">
+            <div class="welcome">
+                <h2>Dear friends and family!</h2>
+                <p>We are thrilled to announce...</p>
+                <p>Our wedding</p>
+                <p>This day wouldn't be complete...</p>
+                <p>We can't wait to share this moment!</p>
+            </div>
+
+            <p class="x">Let's enjoy this event in</p>
+            <div class="countdown" id="countdown"></div>
+        </div>
+        <br>
+
+       <div class="img4-slideshow">
+    <img src="img4.jpg" alt="">
+    <img src="img5.jpg" alt="">
+    <img src="img6.jpg" alt="">
+    <img src="img7.jpg" alt="">
+    <img src="img8.jpg" alt="">
+    <img src="img9.jpg" alt="">
+    <img src="img10.jpg" alt="">
+</div>
     </div>
-    <div class="header__text-box row">
-      <div class="header__text">
-        <h1 class="heading-primary">
-            <img src="./images/logo.jpg" class="client__logo" alt="Company 2" />
-          <!-- Replace the following name with your name -->
-          <span>Wedding Ceremony</span>
+
+    <div class="main-2">
+        <div class="event">
+            <h1 style="text-align:center;">Event timeline</h1>
+            <p>03.10.2026</p>
+            <p>5:00 pm – Engagement</p>
+            <p>7:30 pm – Dinner</p>
+            <br>
+            <p>10.01.2026</p>
+            <p>10:30 am – Wedding Ceremony</p>
+            <p>12:00 pm – Reception</p>
+        </div>
+
+        <h1 style=" font-family: 'Jost';
+        font-style: normal;
+        font-weight: 400;
+        src: url('./fonts/Jost-Regular.ttf') format('woff'); color: #2A2A3C; padding-top:30px;">
+            The Location
         </h1>
-        <!-- Put a small paragraph about yourself -->
-        <p>
-          <h3>
-              herefore what God has joined together, let no one separate.
 
-          </h3>
-        </p>
-      </div>
-    </div>
-  </header>
+        <div class="map">
+            <!-- MAP 1 -->
+            <div class="map-item">
+                <iframe src="https://www.google.com/maps/embed?..."></iframe>
+                St Forane Church
+            </div>
 
-  <main role="main">
+            <!-- MAP 2 -->
+            <div class="map-item">
+                <iframe src="https://www.google.com/maps/embed?..."></iframe>
+                St Mathews Church
+            </div>
 
-    <!-- ***** Work ***** -->
-
-
-    <!-- ***** Clients ***** -->
-
-    <section class="client" id="clients">
-      <div class="row">
-        <h2>Gallery</h2>
-        <div class="work__image-box">
-          <img src="./images/hug.jpeg" class="work__image" alt="Project 3" />
+            <!-- MAP 3 -->
+            <div class="map-item">
+                <iframe src="https://www.google.com/maps/embed?..."></iframe>
+                Stay Samara
+            </div>
         </div>
-        <div class="work__image-box">
-          <img src="./images/hand.jpeg" class="work__image" alt="Project 3" />
-        </div>
-      </div>
-    </section>
 
-    <!-- ***** About ***** -->
-    <title>Round Corner Image</title>
-    <style>
-        .rounded-image {
-            border-radius: 50%; /* Makes the image round */
-            overflow: hidden; /* Hides overflowing content */
-            width: 200px; /* Adjust width as needed */
-            height: 200px; /* Adjust height as needed */
-        }
-        .rounded-image img {
-            width: 100%; /* Makes the image fill its container */
-            height: auto; /* Maintains aspect ratio */
-        }
-    </style>
-   
+        <span style="font-size: 4vh;"><strong>Watch us live</strong></span>
 
-  </main>
+        <iframe width="90%" height="245" style="padding: 10px 20px 40px 20px;"
+                src="https://www.youtube-nocookie.com/embed/Z_sWD5iSE0w?controls=0"
+                allowfullscreen></iframe>
 
-  <!-- ***** Contact ***** -->
+        <h3 style="padding: 0;">Hope to see you there</h3>
+        <h3 style="padding: 25px 0 0;">Yours,</h3>
 
-
-
-  <!-- ***** Footer ***** -->
-
-  <footer role="contentinfo" class="footer">
-    <div class="row">
-      <!-- Update the links to point to your accounts -->
-   
-
-     
+        <h1 style="font-family:'Dancing Script'; font-size:6vh; margin-top:-15px;">Amboori & Jachu</h1>
+        <span style="font-size: 50px; background:white; border-radius:6px;">♡</span>
     </div>
-  </footer>
 
-  <a href="#top" class="back-to-top" title="Back to Top">
-    <img src="./images/arrow-up.svg" alt="Back to Top" class="back-to-top__image"/>
-  </a>
-  <script src="./index.js"></script>
+<script>
+    var countDownDate = new Date("Jan 10, 2026 10:30:00").getTime();
+
+    setInterval(function () {
+        var now = new Date().getTime();
+        var distance = countDownDate - now;
+
+        if (distance < 0) {
+            document.getElementById("countdown").innerHTML = "EXPIRED";
+            return;
+        }
+
+        var d = Math.floor(distance / (1000 * 60 * 60 * 24));
+        var h = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        var m = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        var s = Math.floor((distance % (1000 * 60)) / 1000);
+
+        document.getElementById("countdown").innerHTML = `
+            <div class="countdown-item">
+                <span class="countdown-number">${d}</span>
+                <span>Days</span>
+            </div>
+            <div class="countdown-item">
+                <span class="countdown-number">:</span>
+            </div>
+            <div class="countdown-item">
+                <span class="countdown-number">${h}</span>
+                <span>Hours</span>
+            </div>
+            <div class="countdown-item">
+                <span class="countdown-number">:</span>
+            </div>
+            <div class="countdown-item">
+                <span class="countdown-number">${m}</span>
+                <span>Minutes</span>
+            </div>
+            <div class="countdown-item">
+                <span class="countdown-number">:</span>
+            </div>
+            <div class="countdown-item">
+                <span class="countdown-number">${s}</span>
+                <span>Seconds</span>
+            </div>
+        `;
+    }, 1000);
+</script>
+
 </body>
-
 </html>
