@@ -6,19 +6,22 @@
     <!-- FIXED: viewport for real responsiveness -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <meta property="og:title" content="Akhil & Jasmine's Wedding Invitation">
+    <meta property="og:title" content="We are getting married">
     <meta property="og:description" content="Join us to celebrate our wedding!">
     <meta property="og:image" content="img_1.png">
     <meta property="og:url" content="https://example.com">
     <meta property="og:type" content="website">
 
     <link rel="icon" href="img2.jpg" type="image/png">
+   
 
-    <title>Akhil & Jasmine's Wedding Invitation</title>
+    <title>We are getting married</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+
+    <!-- <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap" rel="stylesheet"> -->
 
 <style>
     body {
@@ -26,10 +29,10 @@
         margin: 0;
         padding: 0;
         overflow-x: hidden;
-        font-family: 'Jost';
+        font-family: 'Great Vibes';
     font-style: normal;
-    font-weight: 400;
-    src: url('./fonts/Jost-Regular.ttf') format('woff');
+    font-weight: normal;
+    src: url('./fonts/GreatVibes-Regular.ttf') format('truetype');
     }
 
     /* ---------- INTRO SECTION ---------- */
@@ -40,7 +43,7 @@
         color: white;
         font-size: 70px;
         line-height: 1;
-        padding-top: 30px;
+        padding-top: 20px;
         text-align: center;
     }
 
@@ -176,6 +179,29 @@
     animation: fadeAnimation 12s infinite;
     transition: opacity 1s ease-in-out;
 }
+.slideshow-container {
+    position: relative;
+    width: 100%;
+    max-width: 1000px;
+    margin: 40px auto 0 auto;
+    text-align: center;
+    overflow: hidden;      /* IMPORTANT: keeps overlay centered */
+}
+
+/* Center the text perfectly */
+.slideshow-text {
+    position: absolute;
+    top: 70%;
+    left: 50%;
+    transform: translate(-50%, -50%);  /* Perfect centering */
+    font-family: 'Great Vibes', cursive;
+    font-size: 10vw;
+    color: white;
+    text-shadow: 0 4px 12px rgba(0,0,0,0.7);
+    z-index: 20;
+    white-space: nowrap;
+    pointer-events: none;  /* prevents blocking images */
+}
 
 .img4-slideshow img:nth-child(1) {
     animation-delay: 0s;
@@ -216,7 +242,9 @@
     /* ---------- MOBILE VIEW ONLY ---------- */
     @media screen and (max-width: 768px) {
 
-        body { font-family: 'Poppins', sans-serif;
+        body {  
+               font-family: 'Great Vibes', cursive;
+
     }
 
         .intro {
@@ -234,7 +262,7 @@
         .intro img {
             width: 90%;
             height: auto;
-            margin-top: 20px;
+            /* margin-top: 20px; */
         }
 
         .welcome {
@@ -265,7 +293,22 @@
 
 <body>
     <div class="main-1">
+        <div class="slideshow-container"></div>
+
+            <div class="slideshow-text">We Are Getting Married</div>
+
+            <div class="img4-slideshow">
+                <img src="img4.jpg" alt="">
+                <img src="img5.jpg" alt="">
+                <img src="img6.jpg" alt="">
+                <img src="img7.jpg" alt="">
+                <img src="img8.jpg" alt="">
+                <img src="img9.jpg" alt="">
+                <img src="img10.jpg" alt="">
+            </div>
+        </div>
         <div class="intro">
+            
             <p>Akhil Karamullil</p>
             <p>&</p>
             <p>Jasmine George</p>
@@ -294,15 +337,7 @@
         </div>
         <br>
 
-       <div class="img4-slideshow">
-    <img src="img4.jpg" alt="">
-    <img src="img5.jpg" alt="">
-    <img src="img6.jpg" alt="">
-    <img src="img7.jpg" alt="">
-    <img src="img8.jpg" alt="">
-    <img src="img9.jpg" alt="">
-    <img src="img10.jpg" alt="">
-</div>
+        
     </div>
 
     <div class="main-2">
@@ -317,10 +352,10 @@
             <p>12:00 pm – Reception</p>
         </div>
 
-        <h1 style=" font-family: 'Jost';
+        <h1 style=" font-family: 'GreatVibes-Regular';
         font-style: normal;
         font-weight: 400;
-        src: url('./fonts/Jost-Regular.ttf') format('woff'); color: #2A2A3C; padding-top:30px;">
+        src: url('./fonts/GreatVibes-Regular.ttf') format('woff'); color: #2A2A3C; padding-top:30px;">
             The Location
         </h1>
 
