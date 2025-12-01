@@ -28,221 +28,265 @@
         rel="stylesheet">
 
     <style>
+        :root {
+            --bg: #fbfbfb;
+            --paper: #ffffff;
+            --text: #2a2a2a;
+            --muted: #7a7a7a;
+            --gold: #c9a76b;
+            /* gold markers */
+            --dot: #d8b86a;
+            --accent-dark: #222;
+            --max: 900px;
+        }
 
-    :root{
-      --bg: #fbfbfb;
-      --paper: #ffffff;
-      --text: #2a2a2a;
-      --muted: #7a7a7a;
-      --gold: #c9a76b; /* gold markers */
-      --dot: #d8b86a;
-      --accent-dark: #222;
-      --max: 900px;
-    }
+        * {
+            box-sizing: border-box
+        }
 
-    *{box-sizing:border-box}
-    html,body{height:100%}
-    body{
-      margin:0;
-      font-family: "Playfair Display", serif;
-      background: linear-gradient(180deg, var(--bg), #f7f5f3 120px);
-      color:var(--text);
-      -webkit-font-smoothing:antialiased;
-      -moz-osx-font-smoothing:grayscale;
-      padding:28px;
-    }
+        html,
+        body {
+            height: 100%
+        }
 
-    .wrap{
-      max-width:var(--max);
-      margin:0 auto;
-      padding:28px;
-    }
+        body {
+            margin: 0;
+            font-family: "Playfair Display", serif;
+            background: linear-gradient(180deg, var(--bg), #f7f5f3 120px);
+            color: var(--text);
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            padding: 28px;
+        }
 
-    /* Page heading */
-    .program-title{
-      text-align:center;
-      font-size:56px;
-      letter-spacing:2px;
-      margin:14px 0 34px 0;
-      color:var(--accent-dark);
-      font-weight:700;
-    }
+        .wrap {
+            max-width: var(--max);
+            margin: 0 auto;
+            padding: 28px;
+        }
 
-    /* The timeline container */
-    .timeline {
-      position:relative;
-      margin: 10px 0 60px;
-      padding: 20px 0;
-    }
+        /* Page heading */
+        .program-title {
+            text-align: center;
+            font-size: 56px;
+            letter-spacing: 2px;
+            margin: 14px 0 34px 0;
+            color: var(--accent-dark);
+            font-weight: 700;
+        }
 
-    /* vertical line in middle */
-    .timeline::before{
-      content:"";
-      position:absolute;
-      left:50%;
-      transform:translateX(-50%);
-      top:0;
-      bottom:0;
-      width:2px;
-      background:linear-gradient(#efe9e1, #efe9e1);
-      z-index:1;
-    }
+        /* The timeline container */
+        .timeline {
+            position: relative;
+            margin: 10px 0 60px;
+            padding: 20px 0;
+        }
 
-    /* one timeline item */
-    .timeline-item{
-      position:relative;
-      width:50%;
-      padding:18px 40px;
-      display:flex;
-      gap:18px;
-      align-items:center;
-    }
+        /* vertical line in middle */
+        .timeline::before {
+            content: "";
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: linear-gradient(#efe9e1, #efe9e1);
+            z-index: 1;
+        }
 
-    /* left items (time on left) */
-    .timeline-item.left{
-      left:0;
-      text-align:right;
-      justify-content:flex-end;
-      margin:18px 0;
-    }
+        /* one timeline item */
+        .timeline-item {
+            position: relative;
+            width: 50%;
+            padding: 18px 40px;
+            display: flex;
+            gap: 18px;
+            align-items: center;
+        }
 
-    /* right items */
-    .timeline-item.right{
-      left:50%;
-      text-align:left;
-      justify-content:flex-start;
-      margin:18px 0;
-    }
+        /* left items (time on left) */
+        .timeline-item.left {
+            left: 0;
+            text-align: right;
+            justify-content: flex-end;
+            margin: 18px 0;
+        }
 
-    /* content box for event (title, place) */
-    .event-card{
-      background:transparent;
-      z-index:2;
-      max-width:320px;
-    }
+        /* right items */
+        .timeline-item.right {
+            left: 50%;
+            text-align: left;
+            justify-content: flex-start;
+            margin: 18px 0;
+        }
 
-    .time {
-      font-size:20px;
-      color:var(--accent-dark);
-      font-weight:700;
-      letter-spacing:0.6px;
-    }
+        /* content box for event (title, place) */
+        .event-card {
+            background: transparent;
+            z-index: 2;
+            max-width: 320px;
+        }
 
-    .event-title{
-      font-size:15px;
-      text-transform:uppercase;
-      letter-spacing:1.2px;
-      margin-top:6px;
-      color:var(--accent-dark);
-      font-weight:700;
-    }
+        .time {
+            font-size: 20px;
+            color: var(--accent-dark);
+            font-weight: 700;
+            letter-spacing: 0.6px;
+        }
 
-    .event-sub{
-      font-size:12px;
-      margin-top:6px;
-      color:var(--muted);
-      line-height:1.3;
-    }
+        .event-title {
+            font-size: 15px;
+            text-transform: uppercase;
+            letter-spacing: 1.2px;
+            margin-top: 6px;
+            color: var(--accent-dark);
+            font-weight: 700;
+        }
 
-    /* icon container near the center line */
-    .marker {
-      position:absolute;
-      left:50%;
-      transform:translateX(-50%);
-      z-index:3;
-      width:22px;
-      height:22px;
-      border-radius:50%;
-      background:var(--gold);
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      box-shadow:0 2px 6px rgba(0,0,0,0.12);
-    }
+        .event-sub {
+            font-size: 12px;
+            margin-top: 6px;
+            color: var(--muted);
+            line-height: 1.3;
+        }
 
-    /* icon inside marker */
-    .marker svg{ width:12px; height:12px; fill:#fff; }
+        /* icon container near the center line */
+        .marker {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 3;
+            width: 22px;
+            height: 22px;
+            border-radius: 50%;
+            background: var(--gold);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.12);
+        }
 
-    /* small decorative horizontal rule near titles */
-    .hr-small{
-      width:48px;
-      height:2px;
-      margin:8px auto 0;
-      background:linear-gradient(90deg, rgba(0,0,0,0.08), rgba(0,0,0,0.02));
-    }
+        /* icon inside marker */
+        .marker svg {
+            width: 12px;
+            height: 12px;
+            fill: #fff;
+        }
 
-    /* Alternate position adjustments */
-    .timeline-item.left .event-card{
-      margin-right:12px;
-    }
-    .timeline-item.right .event-card{
-      margin-left:12px;
-    }
+        /* small decorative horizontal rule near titles */
+        .hr-small {
+            width: 48px;
+            height: 2px;
+            margin: 8px auto 0;
+            background: linear-gradient(90deg, rgba(0, 0, 0, 0.08), rgba(0, 0, 0, 0.02));
+        }
 
-    /* place the marker vertically for each item */
-    .timeline-item .marker{
-      top:50%;
-      transform:translate(-50%,-50%);
-    }
+        /* Alternate position adjustments */
+        .timeline-item.left .event-card {
+            margin-right: 12px;
+        }
 
-    /* spacing - larger screens */
-    @media (min-width:780px){
-      .timeline-item{
-        min-height:92px;
-      }
-      .timeline-item.left{ padding-right:70px; }
-      .timeline-item.right{ padding-left:70px; }
-    }
+        .timeline-item.right .event-card {
+            margin-left: 12px;
+        }
 
-    /* small screens — stack them: timeline becomes a left line,
+        /* place the marker vertically for each item */
+        .timeline-item .marker {
+            top: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        /* spacing - larger screens */
+        @media (min-width:780px) {
+            .timeline-item {
+                min-height: 92px;
+            }
+
+            .timeline-item.left {
+                padding-right: 70px;
+            }
+
+            .timeline-item.right {
+                padding-left: 70px;
+            }
+        }
+
+        /* small screens — stack them: timeline becomes a left line,
        items full width and markers move left of content */
-    @media (max-width:779px){
-      .program-title{ font-size:40px; }
-      .timeline::before{ left:28px; transform:none; width:3px; }
-      .timeline-item{
-        width:100%;
-        padding:12px 16px 12px 56px;
-        text-align:left;
-        left:0 !important;
-      }
-      .timeline-item.right{ left:0 !important; }
-      .timeline-item.left{ left:0 !important; }
-      .timeline-item .marker{ left:28px; transform:translateY(-50%); }
-      .timeline-item .event-card{ max-width:unset; }
-    }
+        @media (max-width:779px) {
+            .program-title {
+                font-size: 40px;
+            }
 
-    /* small visual tweaks for elegance */
-    .muted-small{ color:var(--muted); font-size:12px; margin-top:6px; }
-    .gold-dot{
-      width:10px;
-      height:10px;
-      background:var(--dot);
-      border-radius:50%;
-      display:inline-block;
-      margin:0 8px;
-      vertical-align:middle;
-      box-shadow:0 1px 0 rgba(0,0,0,0.06);
-    }
+            .timeline::before {
+                left: 28px;
+                transform: none;
+                width: 3px;
+            }
 
-    /* Optional: icons style on the sides (for large screens) */
-    .side-icon{
-      width:40px;
-      height:40px;
-      border-radius:6px;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      color:var(--muted);
-    }
+            .timeline-item {
+                width: 100%;
+                padding: 12px 16px 12px 56px;
+                text-align: left;
+                left: 0 !important;
+            }
 
-    /* heading small subtitle */
-    .program-sub{
-      text-align:center;
-      color:var(--muted);
-      letter-spacing:2px;
-      font-size:13px;
-      margin-bottom:8px;
-    }
+            .timeline-item.right {
+                left: 0 !important;
+            }
+
+            .timeline-item.left {
+                left: 0 !important;
+            }
+
+            .timeline-item .marker {
+                left: 28px;
+                transform: translateY(-50%);
+            }
+
+            .timeline-item .event-card {
+                max-width: unset;
+            }
+        }
+
+        /* small visual tweaks for elegance */
+        .muted-small {
+            color: var(--muted);
+            font-size: 12px;
+            margin-top: 6px;
+        }
+
+        .gold-dot {
+            width: 10px;
+            height: 10px;
+            background: var(--dot);
+            border-radius: 50%;
+            display: inline-block;
+            margin: 0 8px;
+            vertical-align: middle;
+            box-shadow: 0 1px 0 rgba(0, 0, 0, 0.06);
+        }
+
+        /* Optional: icons style on the sides (for large screens) */
+        .side-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--muted);
+        }
+
+        /* heading small subtitle */
+        .program-sub {
+            text-align: center;
+            color: var(--muted);
+            letter-spacing: 2px;
+            font-size: 13px;
+            margin-bottom: 8px;
+        }
 
 
 
@@ -300,6 +344,7 @@
             /* padding-top: 30px; */
             font-size: 44px;
         }
+
         .date {
             color: #3A3A3A;
             text-align: center;
@@ -426,7 +471,7 @@
             left: 0;
             top: 0;
             opacity: 0;
-            animation: fadeAnimation 6s infinite;
+            animation: fadeAnimation 16s infinite;
             transition: opacity 1s ease-in-out;
         }
 
@@ -473,6 +518,30 @@
             animation-delay: 6s;
         }
 
+        .img4-slideshow img:nth-child(5) {
+            animation-delay: 8s;
+        }
+
+        .img4-slideshow img:nth-child(6) {
+            animation-delay: 10s;
+        }
+
+        .img4-slideshow img:nth-child(7) {
+            animation-delay: 12s;
+        }
+
+        .img4-slideshow img:nth-child(8) {
+            animation-delay: 14s;
+        }
+
+        .img4-slideshow img:nth-child(9) {
+            animation-delay: 16s;
+        }
+
+        /* .img4-slideshow img:nth-child(10) {
+            animation-delay: 18s;
+        } */
+
 
 
 
@@ -508,7 +577,7 @@
 
             .intro {
                 font-size: 40px;
-                
+
             }
 
             /* .intro p {
@@ -623,7 +692,8 @@
             }
 
             .centered-div {
-                width: 50%; /* Or any specific width */
+                width: 50%;
+                /* Or any specific width */
                 margin-left: auto;
                 margin-right: auto;
             }
@@ -639,15 +709,16 @@
         text-align: center;
         font-family: 'Allura', cursive;">Akhil & Jasmine</div>
         <div class="intro">
-           
+
             <!-- <p style="color:#a17d71; ">Akhil & Jasmine</p> -->
-            <div style="color:#5f5d5d; font-size: 18px; padding-bottom: 20px; font-family:Open Sans">January 10, 2026 </div>
+            <div style="color:#5f5d5d; font-size: 18px; padding-bottom: 20px; font-family:Open Sans">January 10, 2026
+            </div>
             <img src="img16.jpg">
 
             <div class="date" style="font-size: 20px; padding-bottom: 30px;">Join us for the Wedding in</div>
 
-            
-            
+
+
             <!-- <img src="img3.png"> -->
 
             <!-- scroll down
@@ -660,10 +731,10 @@
 
         <div class="intro-mid">
             <!-- <div class="welcome"> -->
-                <!-- <h2>Event Details & Schedule</h2> -->
-                <img src="timeline_planner.png" alt="Image" style="width:90%;">
+            <!-- <h2>Event Details & Schedule</h2> -->
+            <img src="timeline_planner.png" alt="Image" style="width:90%;">
 
-                <!-- <div style="
+            <!-- <div style="
     font-size:16px;
     text-align:center;
     margin-top:20px;
@@ -680,19 +751,20 @@
 
             <!-- </div> -->
         </div>
-     
+
         <br>
 
     </div>
 
-    
+
 
     <div class="main-2">
-      <img width="100%" src="live.jpeg" style="padding-bottom: 15px;">
+        <img width="100%" src="live.jpeg" style="padding-bottom: 15px;">
         <iframe width="90%" height="245" style="padding: 10px 20px 40px 20px;"
             src="https://www.youtube-nocookie.com/embed/Z_sWD5iSE0w?controls=0" allowfullscreen></iframe>
 
-            <div style="font-family:'Allura', cursive; padding: 0; font-size: 40px; color: #a17d71; padding-top: 10px;">Locations</div>
+        <div style="font-family:'Allura', cursive; padding: 0; font-size: 40px; color: #a17d71; padding-top: 10px;">
+            Locations</div>
 
         <!-- <h1 style=" font-family: 'GreatVibes-Regular';
         font-style: normal;
@@ -704,58 +776,67 @@
         <div class="map">
             <!-- MAP 1 -->
             <div class="map-item">
-                <iframe src="https://www.google.com/maps/embed?..."></iframe>
+                <iframe src="https://www.google.com/maps?q=9.687223048167866, 76.53804104232836&z=16&output=embed"
+                    allowfullscreen loading="lazy">
+                </iframe>
                 St Mathews Church, Kottackupuram
             </div>
 
             <!-- MAP 2 -->
             <div class="map-item">
-                <iframe src="https://www.google.com/maps/embed?..."></iframe>
+                <iframe src="https://www.google.com/maps?q=9.644042125865097, 76.51075342266601&z=16&output=embed"
+                    allowfullscreen loading="lazy">
+                </iframe>
                 Stay Samara, Villoonni
             </div>
 
             <!-- MAP 3 -->
             <div class="map-item">
-                <iframe src="https://www.google.com/maps/embed?..."></iframe>
+                <iframe src="https://www.google.com/maps?q=8.50488962255807, 77.19150651349314&z=16&output=embed"
+                    allowfullscreen loading="lazy">
+                </iframe>
                 St George Forane Church, Amboori
             </div>
         </div>
-       
+
 
         <!-- <span style="font-size: 4vh;"><strong>Watch us live</strong></span> -->
 
-        
+
 
         <div style="font-family:'Allura', cursive; padding: 0; font-size: 40px; color: #a17d71">Gallery</div>
         <div class="slideshow-container"></div>
 
-    <!-- <div class="slideshow-text">We Are Getting Married</div> -->
+        <!-- <div class="slideshow-text">We Are Getting Married</div> -->
 
-    <div class="img4-slideshow">
-        <!-- <img src="img4.jpg" alt=""> -->
-        <img src="img5.jpg" alt="">
-        <img src="img8.jpg" alt="">
-        <img src="img9.jpg" alt="">
-        <img src="img10.jpg" alt="">
-    </div>
+        <div class="img4-slideshow">
+            <img src="img17.jpg" alt="">
+            <img src="img5.jpg" alt="">
+            <img src="img12.jpg" alt="">
+            <img src="img8.jpg" alt="">
+            <img src="img13.jpg" alt="">
+            <img src="img9.jpg" alt="">
+            <img src="img14.jpg" alt="">
+            <img src="img10.jpg" alt="">
+            <img src="img11.jpg" alt="">
+        </div>
 
-    <div class="centered-div">
         <div class="centered-div">
-        <h3 class="centered-div" style="padding: 25px 0 0;font-family:'Allura', cursive;">Yours,</h3></div>
+            <div class="centered-div">
+                <h3 class="centered-div" style="padding: 25px 0 0;font-family:'Allura', cursive;">Yours,</h3>
+            </div>
 
-        <h1 style="font-family:'Allura', cursive; font-size:25px; text-align:center;">
-            Amboori & Jachu
-        </h1>
-        <div style="text-align:center; margin-top:20px;">
-            <img src="wedding_icon.png" 
-                 alt="icon" 
-                 style="width:60px; height:auto; margin-bottom:10px;">
-                 
-            <!-- <h1 style="padding: 20px 0 0; font-family:'Allura', cursive; font-size:28px;">
+            <h1 style="font-family:'Allura', cursive; font-size:25px; text-align:center;">
+                Amboori & Jachu
+            </h1>
+            <div style="text-align:center; margin-top:20px;">
+                <img src="wedding_icon.png" alt="icon" style="width:60px; height:auto; margin-bottom:10px;">
+
+                <!-- <h1 style="padding: 20px 0 0; font-family:'Allura', cursive; font-size:28px;">
                 Amboori & Jachu
             </h1> -->
+            </div>
         </div>
-    </div>
     </div>
     </div>
 
@@ -763,22 +844,22 @@
 
 
 
-(function() {
-      // Calculate marker top positions relative to their parent timeline-item center.
-      // This is optional — CSS handles most cases. We keep it lightweight and defensive.
-      try {
-        const items = document.querySelectorAll('.timeline-item');
-        items.forEach(item => {
-          const marker = item.querySelector('.marker');
-          if (!marker) return;
-          // place marker vertically centered to the item
-          const rect = item.getBoundingClientRect();
-          const parentRect = item.parentElement.getBoundingClientRect();
-          const topOffset = item.offsetTop + (item.offsetHeight / 2);
-          marker.style.top = (topOffset) + 'px';
-        });
-      } catch (e) { /* ignore if layout not ready */ }
-    })();
+        (function () {
+            // Calculate marker top positions relative to their parent timeline-item center.
+            // This is optional — CSS handles most cases. We keep it lightweight and defensive.
+            try {
+                const items = document.querySelectorAll('.timeline-item');
+                items.forEach(item => {
+                    const marker = item.querySelector('.marker');
+                    if (!marker) return;
+                    // place marker vertically centered to the item
+                    const rect = item.getBoundingClientRect();
+                    const parentRect = item.parentElement.getBoundingClientRect();
+                    const topOffset = item.offsetTop + (item.offsetHeight / 2);
+                    marker.style.top = (topOffset) + 'px';
+                });
+            } catch (e) { /* ignore if layout not ready */ }
+        })();
 
 
         var countDownDate = new Date("Jan 10, 2026 10:30:00").getTime();
